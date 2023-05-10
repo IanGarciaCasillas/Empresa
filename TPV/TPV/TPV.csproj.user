@@ -7,7 +7,27 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="WndConsultaTicket.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="wndLogin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="wndPagaments.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WndConsultaTicket.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="wndLogin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="wndPagaments.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

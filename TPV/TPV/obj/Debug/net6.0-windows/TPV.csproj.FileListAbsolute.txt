@@ -1,0 +1,54 @@
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\TPV.exe
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\TPV.deps.json
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\TPV.runtimeconfig.json
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\TPV.dll
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\TPV.pdb
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.csproj.AssemblyReference.cache
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\MainWindow.g.cs
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\App.g.cs
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV_MarkupCompile.cache
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV_MarkupCompile.lref
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\MainWindow.baml
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.g.resources
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.GeneratedMSBuildEditorConfig.editorconfig
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.AssemblyInfoInputs.cache
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.AssemblyInfo.cs
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.csproj.CoreCompileInputs.cache
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.dll
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\refint\TPV.dll
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.pdb
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.genruntimeconfig.cache
+F:\DAM 2.2\DAM\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\ref\TPV.dll
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\TPV.exe
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\TPV.deps.json
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\TPV.runtimeconfig.json
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\TPV.dll
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\TPV.pdb
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.csproj.AssemblyReference.cache
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\WndConsultaTicket.g.cs
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV_MarkupCompile.cache
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV_MarkupCompile.lref
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\WndConsultaTicket.baml
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.g.resources
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.AssemblyInfoInputs.cache
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.AssemblyInfo.cs
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.csproj.CoreCompileInputs.cache
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.dll
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\refint\TPV.dll
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.pdb
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.genruntimeconfig.cache
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\ref\TPV.dll
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\wndPagaments.g.cs
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\wndPagaments.baml
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV.csproj.CopyComplete
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\bin\Debug\net6.0-windows\darthvader.png
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\TPV_Content.g.cs
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\wndLogin.g.cs
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\wndLogin.baml

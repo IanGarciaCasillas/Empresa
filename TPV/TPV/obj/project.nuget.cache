@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Sq0NRxFpJAP+LXgVm8EpZ0tZW1By+1+HaLkNuN3yAIKsWF3LaEBscv+Jwqvh2x8FwWphkj1SPO0EsOi/s9E5jA==",
+  "dgSpecHash": "KbKRTwowaQ3Q9ono04T0TCFdLUBhbfaTQ/7Nx7vbYJX5DdiOmci9LUmSnLAa1u4eUutadFscNoFB7eVbfVDfiw==",
   "success": true,
   "projectFilePath": "C:\\Users\\SMXIGarcia\\Nextcloud\\DAM 2.2\\(M13) Projecte\\Projecte Final\\Projecte\\Empersa\\TPV\\TPV\\TPV.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\SMXIGarcia\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\SMXIGarcia\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\SMXIGarcia\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

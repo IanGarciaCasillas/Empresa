@@ -1,0 +1,20 @@
+﻿<Window x:Class="TPV.wndLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TPV"
+        mc:Ignorable="d"
+        Title="LOGIN" Height="450" Width="800">
+    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+        <DockPanel Margin="10">
+            <TextBlock Text="USUARI" FontSize="20"/>
+            <TextBox x:Name="txUserEmpl" Text="IanEmpl" FontSize="20" Margin="15,0,30,0"/>
+        </DockPanel>
+        <DockPanel Margin="10">
+            <TextBlock Text="CONTRASENYA" FontSize="20"/>
+            <PasswordBox x:Name="PbEmpl" Password="12345" FontSize="20" Margin="15,0,30,0" />
+        </DockPanel>
+        <Button x:Name="btnLogin" Content="ENTRAR" Background="LightGreen" FontSize="20" Margin="15" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="15,5,15,5" Click="btnLogin_Click"/>
+    </StackPanel>
+</Window>
