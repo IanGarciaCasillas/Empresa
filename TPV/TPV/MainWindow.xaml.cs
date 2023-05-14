@@ -14,7 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TPV.Infraestructura;
 using TPV.Models;
+using TPV.ViewModel;
 
 namespace TPV
 {
@@ -24,19 +26,22 @@ namespace TPV
     public partial class MainWindow : Window
     {
         DAOManagerAPI DAOManagerAPI;
+        TPVViewModel ViewModel;
 
         public MainWindow(DAOManagerAPI manager)
         {
-            
+            ViewModel = new TPVViewModel();
             DAOManagerAPI = manager;
             InitializeComponent();
+            //lsbArticles_Tpv.DataContext = ViewModel;
             
             tbControl.SelectedIndex = 2;
-            List<Article> llistaArticles = DAOManagerAPI.GetArticles();
-            CarregarArticles(llistaArticles);
-            
-            
-            
+            //List<Article> llistaArticles = DAOManagerAPI.GetArticles();
+            //CarregarArticles(llistaArticles);
+            //lsbLlistaComanda_Tpv.DataContext = ViewModel;
+
+
+
         }
 
 
@@ -68,7 +73,7 @@ namespace TPV
                     }
                 }
 
-                lsbArticles_Tpv.Items.Add(new { Img = imgDb, NomArticle = article.NomArticle, PreuArticle = $"{article.PreuVenta} €/u", IdArticle = article.IdArticle} );
+                //lsbArticles_Tpv.Items.Add(new { Img = imgDb, NomArticle = article.NomArticle, PreuArticle = $"{article.PreuVenta} €/u", IdArticle = article.IdArticle, Clicker = ViewModel.AddArticleCompra});
             }
         }
 
@@ -78,21 +83,6 @@ namespace TPV
             var idArticle = btnSelect.Tag.ToString();
 
             Article articleSeclect = DAOManagerAPI.GetArticle(Convert.ToInt32(idArticle));
-
-        }
-
-        private void btnRestaArticle_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnSumaArticle_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnDeleterArticle_Click(object sender, RoutedEventArgs e)
-        {
 
         }
     }

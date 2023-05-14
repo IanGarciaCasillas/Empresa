@@ -4,72 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TPV"
+        xmlns:vm="clr-namespace:TPV.ViewModel"
         mc:Ignorable="d"
         Title="TPV" Height="450" Width="800">
-
-    <Window.Resources>
-        <!-- STYLE ARTICLES TPV-->
-        <Style x:Key="LlistaArticles" TargetType="{x:Type ListBox}">
-            <Setter Property="ItemTemplate">
-                <Setter.Value>
-                    <DataTemplate>
-                        <StackPanel Orientation="Vertical">
-                            <Image Source="{Binding Img}" Stretch="Fill" Width="200" Height="200"/>
-                            <TextBlock Text="{Binding NomArticle}" FontSize="16" TextAlignment="Center"/>
-                            <TextBlock Text="{Binding PreuArticle}" FontSize="16" TextAlignment="Center"/>
-                            <Button x:Name="btnAfegirArticle_Tpv" Tag="{Binding IdArticle}" Content="AFEGIR" Background="LightGreen" VerticalAlignment="Center" Margin="15,0,15,0" Click="AfegirArticleCompra"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="ItemsPanel">
-                <Setter.Value>
-                    <ItemsPanelTemplate>
-                        <WrapPanel/>
-                    </ItemsPanelTemplate>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
-        </Style>
-
-        <!-- STYLE ARTICLES COMPRA TPV-->
-        <Style x:Key="ArticlesCompra" TargetType="{x:Type ListBox}">
-            <Setter Property="ItemTemplate">
-                <Setter.Value>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <DockPanel DockPanel.Dock="Left">
-                                <Button x:Name="btnSumaArticle" Content="+" FontSize="20" Background="LawnGreen" Padding="5" DockPanel.Dock="Top" Click="btnSumaArticle_Click"/>
-                                <Button x:Name="btnRestaArticle" Content="-" FontSize="20" Background="Red" Padding="5" DockPanel.Dock="Bottom" Click="btnRestaArticle_Click"/>
-                                <TextBlock Text="{Binding CountArticle}" FontSize="16" TextAlignment="Center"/>
-                            </DockPanel>
-                            <DockPanel VerticalAlignment="Center" Margin="5,0,5,0">
-                                <TextBlock Text="{Binding NomArticle}" FontSize="20" TextAlignment="Center" DockPanel.Dock="Top"/>
-                                <TextBlock Text="{Binding PreuArticle}" FontSize="20"   TextAlignment="Center"/>
-                            </DockPanel>
-                            <Button x:Name="btnDeleterArticle" DockPanel.Dock="Right" Width="90" Height="90" Click="btnDeleterArticle_Click">
-                                <Image Source="darthvader.png" Stretch="Fill"/>
-                            </Button>
-                        </StackPanel>
-                    </DataTemplate>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="ItemsPanel">
-                <Setter.Value>
-                    <ItemsPanelTemplate>
-                        <WrapPanel/>
-                    </ItemsPanelTemplate>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
-            
-        </Style>
-        
-    </Window.Resources>
-  
+    <Window.DataContext>
+        <vm:TPVViewModel/>
+    </Window.DataContext>
+    
     
     <DockPanel LastChildFill="True">
         <TabControl x:Name="tbControl" TabStripPlacement="Bottom" HorizontalContentAlignment="Stretch">
+            <!--
+                MAGATZEM
+            -->
             <TabItem Header="MAGATZEM" Padding="10" HorizontalContentAlignment="Stretch">
                 <DockPanel>
                     <DockPanel DockPanel.Dock="Top">
@@ -88,7 +35,6 @@
             <!--
                         GENERO
             -->
-            
             <TabItem Header="GENERO" Padding="10" HorizontalContentAlignment="Stretch">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -127,9 +73,9 @@
                     </Grid.RowDefinitions>
                     <DockPanel Grid.Column="0">
                         <TextBox x:Name="txbBuscador_Tpv" DockPanel.Dock="Top" Text="BUSCAR ARTICLE" TextAlignment="Center"/>
-                        <ListBox x:Name="lsbArticles_Tpv" Style="{StaticResource LlistaArticles}">
+                        <ListView x:Name="lsbArticles_Tpv" Style="{StaticResource LlistaArticles}" ItemsSource="{Binding Articles}" >
                                 
-                        </ListBox>
+                        </ListView>
                     </DockPanel>
 
                     <DockPanel Grid.Column="1">
@@ -142,7 +88,7 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <ListBox x:Name="lsbLlistaComanda_Tpv" Style="{StaticResource ArticlesCompra}"/>
+                        <ListView x:Name="lsbLlistaComanda_Tpv" Style="{StaticResource ArticlesCompra}" ItemsSource="{Binding LlistaCompra}" />
                     </DockPanel>
                     <DockPanel Grid.Row="1" Grid.ColumnSpan="2" LastChildFill="False">
                         <Button x:Name="btnConsultaTicket_TPV" DockPanel.Dock="Right" Content="CONSULTA TICKET" Margin="0,3,7,3" Padding="5" Click="btnConsultaTicket_TPV_Click"/>

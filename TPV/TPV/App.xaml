@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:TPV"
              StartupUri="wndLogin.xaml">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
                 
     </Application.Resources>
 </Application>

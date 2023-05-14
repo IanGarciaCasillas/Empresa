@@ -1,0 +1,65 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    >
+
+    <!-- STYLE ARTICLES LLISTA TPV-->
+    <Style x:Key="LlistaArticles" TargetType="{x:Type ListView}">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="{Binding Img}" Stretch="Fill" Width="200" Height="200"/>
+                        <TextBlock Text="{Binding NomArticle}" FontSize="16" TextAlignment="Center"/>
+                        <TextBlock Text="{Binding PreuArticle}" FontSize="16" TextAlignment="Center"/>
+                        <Button x:Name="btnAfegirArticle_Tpv" Content="AFEGIR" Background="LightGreen" VerticalAlignment="Center" Margin="15,0,15,0" Command="{Binding Command}" CommandParameter="{Binding IdArticle}" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type StackPanel}},Path=DataContext}" />
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+    </Style>
+
+
+
+    <!-- STYLE ARTICLES COMPRA-->
+    
+    <Style x:Key="ArticlesCompra" TargetType="{x:Type ListView}">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <DockPanel DockPanel.Dock="Left">
+                            <Button x:Name="btnSumaArticle" Content="+" FontSize="20" Background="LawnGreen" Padding="5" DockPanel.Dock="Top" Command="{Binding SumaClick}" CommandParameter="{Binding Idx}"/>
+                            <Button x:Name="btnRestaArticle" Content="-" FontSize="20" Background="Red" Padding="5" DockPanel.Dock="Bottom" Command="{Binding RestaClick}" CommandParameter="{Binding Idx}"/>
+                            <TextBlock Text="{Binding CountArticle}" FontSize="16" TextAlignment="Center"/>
+                        </DockPanel>
+                        <DockPanel VerticalAlignment="Center" Margin="5,0,5,0">
+                            <TextBlock Text="{Binding NomArticle}" FontSize="20" TextAlignment="Center" DockPanel.Dock="Top"/>
+                            <TextBlock Text="{Binding PreuArticle}" FontSize="20" TextAlignment="Center" DockPanel.Dock="Bottom"/>
+                        </DockPanel>
+                        <Button x:Name="btnDeleterArticle" DockPanel.Dock="Right" Width="90" Height="90" Command="{Binding EliminarClick}" CommandParameter="{Binding Idx}">
+                            <Image Source="darthvader.png" Stretch="Fill"/>
+                        </Button>
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+
+    </Style>
+
+</ResourceDictionary>
