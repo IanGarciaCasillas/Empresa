@@ -34,30 +34,24 @@
         <Setter Property="ItemTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <DockPanel LastChildFill="True">
                         <DockPanel DockPanel.Dock="Left">
                             <Button x:Name="btnSumaArticle" Content="+" FontSize="20" Background="LawnGreen" Padding="5" DockPanel.Dock="Top" Command="{Binding SumaClick}" CommandParameter="{Binding Idx}"/>
                             <Button x:Name="btnRestaArticle" Content="-" FontSize="20" Background="Red" Padding="5" DockPanel.Dock="Bottom" Command="{Binding RestaClick}" CommandParameter="{Binding Idx}"/>
                             <TextBlock Text="{Binding CountArticle}" FontSize="16" TextAlignment="Center"/>
                         </DockPanel>
+                        <Button x:Name="btnDeleterArticle" DockPanel.Dock="Right" Width="90" Height="90" Command="{Binding EliminarClick}" CommandParameter="{Binding Idx}">
+                            <Image Source="img/papera.png" Stretch="Fill"/>
+                        </Button>
                         <DockPanel VerticalAlignment="Center" Margin="5,0,5,0">
                             <TextBlock Text="{Binding NomArticle}" FontSize="20" TextAlignment="Center" DockPanel.Dock="Top"/>
                             <TextBlock Text="{Binding PreuArticle}" FontSize="20" TextAlignment="Center" DockPanel.Dock="Bottom"/>
                         </DockPanel>
-                        <Button x:Name="btnDeleterArticle" DockPanel.Dock="Right" Width="90" Height="90" Command="{Binding EliminarClick}" CommandParameter="{Binding Idx}">
-                            <Image Source="darthvader.png" Stretch="Fill"/>
-                        </Button>
-                    </StackPanel>
+                    </DockPanel>
                 </DataTemplate>
             </Setter.Value>
-        </Setter>
-        <Setter Property="ItemsPanel">
-            <Setter.Value>
-                <ItemsPanelTemplate>
-                    <WrapPanel/>
-                </ItemsPanelTemplate>
-            </Setter.Value>
-        </Setter>
+        </Setter>        
+
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
 
     </Style>

@@ -7,30 +7,30 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="WndConsultaTicket.xaml.cs">
+    <Compile Update="Views\WndConsultaTicket.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="wndLogin.xaml.cs">
+    <Compile Update="Views\wndLogin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="wndPagaments.xaml.cs">
+    <Compile Update="Views\wndPagaments.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MainWindow.xaml">
+    <Page Update="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="WndConsultaTicket.xaml">
+    <Page Update="Views\WndConsultaTicket.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="wndLogin.xaml">
+    <Page Update="Views\wndLogin.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="wndPagaments.xaml">
+    <Page Update="Views\wndPagaments.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
