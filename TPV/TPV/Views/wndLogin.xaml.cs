@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TPV.Models;
+using TPV.ViewModel;
 
 namespace TPV
 {
@@ -38,7 +39,7 @@ namespace TPV
 
                 if (statusLogin)
                 {
-                    MainWindow window = new MainWindow(DAOManagerAPI);
+                    MainWindow window = new MainWindow();
                     this.Close();
                     window.Show();
                 }

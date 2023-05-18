@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TPV.Views;
 
 namespace TPV
 {
@@ -19,9 +20,15 @@ namespace TPV
     /// </summary>
     public partial class wndPagaments : Window
     {
-        public wndPagaments(int idTicket)
+        public int IdTicket { get; set; }
+        public int NumDocumentTicket { get; set; }
+
+        public wndPagaments(int idTicket, int numdocument)
         {
             InitializeComponent();
+
+            IdTicket = idTicket;
+            NumDocumentTicket = numdocument;
         }
 
         private void btnFactura_Click(object sender, RoutedEventArgs e)
@@ -31,6 +38,9 @@ namespace TPV
 
         private void btnTicket_Click(object sender, RoutedEventArgs e)
         {
+            wndTicket window = new wndTicket(IdTicket, NumDocumentTicket);
+            window.Show();
+
 
         }
     }

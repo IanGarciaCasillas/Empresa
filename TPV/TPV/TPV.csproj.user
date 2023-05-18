@@ -16,6 +16,9 @@
     <Compile Update="Views\wndPagaments.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\wndTicket.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\MainWindow.xaml">
@@ -31,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\wndPagaments.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\wndTicket.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

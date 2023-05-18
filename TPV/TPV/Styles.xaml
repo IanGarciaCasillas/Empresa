@@ -56,4 +56,26 @@
 
     </Style>
 
+
+    <!-- STYLE TICKET-->
+
+    <Style x:Key="LlistaTicket" TargetType="{x:Type ListView}">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <DockPanel>
+                        <TextBlock Text="{Binding UnitatsArticle}" FontSize="20" Margin="5,0,20,0"/>
+                        <TextBlock Text="{Binding NomArticle}" FontSize="20" Margin="20,0,0,0"/>
+                    </DockPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+    </Style>
+
+    
+   
+
+
 </ResourceDictionary>

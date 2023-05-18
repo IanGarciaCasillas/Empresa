@@ -1,0 +1,24 @@
+﻿<Window x:Class="TPV.Views.wndTicket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TPV"
+        xmlns:vm="clr-namespace:TPV.ViewModel"
+        mc:Ignorable="d"
+        Title="wndTicket" Height="450" Width="800"
+        DataContext="{Binding TicketViewModel}"
+        >
+
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Text="{Binding TitolTicket}" FontSize="20" HorizontalAlignment="Center" Margin="5"/>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" >
+            <TextBlock Text="Unitats" FontSize="20" Margin="0,0,10,0"/>
+            <TextBlock Text="Nom article" FontSize="20" Margin="10,0,0,0"/>
+        </StackPanel>
+        <TextBlock DockPanel.Dock="Bottom" Text="{Binding TotalTicket}" FontSize="16"/>
+        <ListView ItemsSource="{Binding LlistaTicket}" Style="{StaticResource LlistaTicket}"/>
+
+
+    </DockPanel>
+</Window>

@@ -71,7 +71,7 @@
                         <RowDefinition Height="9*"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <DockPanel Grid.Column="0">
+                    <DockPanel Grid.Column="0" Grid.RowSpan="2">
                         <TextBox x:Name="txbBuscador_Tpv" DockPanel.Dock="Top" Text="BUSCAR ARTICLE" TextAlignment="Center"/>
                         <ListView x:Name="lsbArticles_Tpv" Style="{StaticResource LlistaArticles}" ItemsSource="{Binding Articles}" >
                                 
@@ -90,9 +90,12 @@
 
                         <ListView x:Name="lsbLlistaComanda_Tpv" Style="{StaticResource ArticlesCompra}" ItemsSource="{Binding LlistaCompra}" HorizontalContentAlignment="Stretch"/>
                     </DockPanel>
+                    <!-- 
                     <DockPanel Grid.Row="1" Grid.ColumnSpan="2" LastChildFill="False">
                         <Button x:Name="btnConsultaTicket_TPV" DockPanel.Dock="Right" Content="CONSULTA TICKET" Margin="0,3,7,3" Padding="5" Command="{Binding ConsultarTicketCommand}"/>
+                        <Button x:Name="btnNada" Click="btnNada_Click" Content="Ticket"/>
                     </DockPanel>
+                    -->
                 </Grid>
             </TabItem>
         </TabControl>

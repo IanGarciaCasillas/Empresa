@@ -32,7 +32,7 @@ namespace TPV.ViewModel
         private string compraTotal;
         private double preuCompraTotal;
         private int idTicketCompra;
-        
+        private int numDocumentTicket;
 
         //PUBLIQUES
         public ICommand AddArticleCompraCommand { get; set; }
@@ -49,6 +49,7 @@ namespace TPV.ViewModel
         public string CompraTotal { get => compraTotal; set => SetProperty(ref compraTotal, value); }
         public double PreuCompraTotal { get => preuCompraTotal; set => SetProperty(ref preuCompraTotal, value); }
         public int IdTicketCompra { get => idTicketCompra; set => SetProperty(ref idTicketCompra, value); }
+        public int NumDocumentTicket { get => numDocumentTicket; set => SetProperty(ref numDocumentTicket, value); }
 
         #endregion
 
@@ -108,10 +109,12 @@ namespace TPV.ViewModel
 
         private void PagarCompra()
         {
-            IdTicketCompra =  DAOManagerAPI.PagarTPV(LlistaCompra.ToList());
+            var newTicket =  DAOManagerAPI.PagarTPV(LlistaCompra.ToList());
             
-            wndPagaments window = new wndPagaments(IdTicketCompra);
+            wndPagaments window = new wndPagaments(newTicket.IdTicket, newTicket.NumDocument);
             window.Show();
+
+            CancelarCompra();
 
 
         }

@@ -19,10 +19,30 @@ namespace TPV.Models
         public const string LINK_WEB_EMPL = "https://localhost:7151/empl/";
         public const string LINK_WEB_TICKETS = "https://localhost:7151/tickets/";
         public const string LINK_WEB_TICKETDETALLS = "https://localhost:7151/ticketDetalls/";
+        
+
 
 
         #region TICKET / TICKETS DETALLS
-        public int PagarTPV(List<ItemCompraTpv> itemCompraTpvs)
+
+        public List<TicketDetall> GetTicketsDetalls(int idTicket, int numDocument)
+        {
+            WebClient client = new WebClient();
+            client.Headers[HttpRequestHeader.ContentType] = "application/json";
+
+            var jsonTicketsDetalls = client.DownloadString($"{LINK_WEB_TICKETDETALLS}{idTicket}/{numDocument}");
+
+            List<TicketDetall>ticketsDetalls = JsonSerializer.Deserialize<List<TicketDetall>>(jsonTicketsDetalls);
+
+
+            var algo = 1;
+
+
+            return ticketsDetalls;
+        }
+
+
+        public Ticket PagarTPV(List<ItemCompraTpv> itemCompraTpvs)
         {
             Ticket newTickert = new Ticket();
             int lastTicket = LastTicket();
@@ -58,10 +78,9 @@ namespace TPV.Models
                 var jsonDetalls = JsonSerializer.Serialize(detalls);
                 var respostaDetalls = client.UploadString($"{LINK_WEB_TICKETDETALLS}", "POST", jsonDetalls);
             }
+            //UpdateStock(itemCompraTpvs);
 
-
-
-            return lastTicket;
+            return newTickert;
         }
 
 
@@ -109,6 +128,23 @@ namespace TPV.Models
         #endregion
 
         #region ARTICLES
+
+
+        public static void UpdateStock(List<ItemCompraTpv> itemCompraTpvs)
+        {
+            WebClient client = new WebClient();
+            client.Headers[HttpRequestHeader.ContentType] = "application/json";
+
+
+            foreach (var item in itemCompraTpvs)
+            {
+                Article articleSelect = GetArticle(item.IdArticle);
+
+                articleSelect.NumVenda += item.CountArticle;
+                articleSelect.Stock -= item.CountArticle;
+            }
+        }
+
         public static List<Article> GetArticles()
         {
             WebClient client = new WebClient();
@@ -117,7 +153,6 @@ namespace TPV.Models
             
             
             List<Article> listArticles = JsonSerializer.Deserialize<List<Article>>( resposta );
-            var espera = "";
              
             return listArticles;
         }
@@ -128,7 +163,6 @@ namespace TPV.Models
 
             var resposta = client.DownloadString($"{LINK_WEB_ARTICLES}{idArticle}");
 
-            var espero = "";
             Article article = JsonSerializer.Deserialize<Article>(resposta);
 
             return article;
