@@ -27,7 +27,7 @@ public partial class Client
 
     public string Token { get; set; } = null!;
 
-    public virtual ICollection<ComandaVendum> ComandaVenda { get; set; } = new List<ComandaVendum>();
+    public virtual ICollection<ComandaVendum>? ComandaVenda { get; set; } = new List<ComandaVendum>();
 
-    public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
+    public virtual ICollection<Ticket>? Tickets { get; set; } = new List<Ticket>();
 }

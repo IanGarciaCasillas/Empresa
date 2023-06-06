@@ -25,12 +25,17 @@ namespace TPV
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        TPVViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
             
             tbControl.SelectedIndex = 2;
+            viewModel = new TPVViewModel();
+
+            DataContext = viewModel;
+
+
             
         }
 
@@ -38,6 +43,14 @@ namespace TPV
         {
             wndPagaments window = new wndPagaments(8,2023);
             window.Show();
+        }
+
+        private void lsbLlistaComanda_Genero_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var idxSelect = lsbLlistaComanda_Genero.SelectedIndex;
+            
+            viewModel.ChangeComanda(idxSelect);
+            
         }
     }
 }

@@ -46,14 +46,20 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <DockPanel Grid.Column="0">
-                        <TextBox x:Name="txbBuscador_Genero" DockPanel.Dock="Top" Text="BUSCAR ARTICLE" TextAlignment="Center"/>
-                        <ListBox x:Name="lsbArticles_Genero"/>
+                        <TextBlock Text="{Binding TitolComanda}" DockPanel.Dock="Top" FontSize="20" Margin="0,0,10,0"/>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" >
+                            <TextBlock Text="Unitats" FontSize="20" Margin="0,0,10,0"/>
+                            <TextBlock Text="Nom article" FontSize="20" Margin="10,0,0,0"/>
+                        </StackPanel>
+                        <Button x:Name="btnPrepararComanda" DockPanel.Dock="Bottom" Content="PREPARA COMANDA" Command="{Binding PreparaComandaCommand}"/>
+                        <ListView ItemsSource="{Binding LlistaComandaDetall}" Style="{StaticResource LlistaComandaDetalls}"/>
                     </DockPanel>
 
                     <DockPanel Grid.Column="1">
                         <TextBlock Text="COMANDES PENDENTS" FontSize="16" TextAlignment="Center" DockPanel.Dock="Top"/>
-                        <TextBox x:Name="txbBuscarComanda_Genero" DockPanel.Dock="Top" Text="COMANDA VENDA" TextAlignment="Center"/>
-                        <ListBox x:Name="lsbLlistaComanda_Genero"/>
+                        
+                        <!--<TextBlock x:Name="txbBuscarComanda_Genero" DockPanel.Dock="Top" Text="COMANDA VENDA" TextAlignment="Center"/>-->
+                        <ListBox x:Name="lsbLlistaComanda_Genero" ItemsSource="{Binding LlistaComandes}" SelectionChanged="lsbLlistaComanda_Genero_SelectionChanged" Style="{StaticResource LlistaComanda}"/>
                     </DockPanel>
                 </Grid>
             </TabItem>
@@ -72,7 +78,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <DockPanel Grid.Column="0" Grid.RowSpan="2">
-                        <TextBox x:Name="txbBuscador_Tpv" DockPanel.Dock="Top" Text="BUSCAR ARTICLE" TextAlignment="Center"/>
+                        <!--<TextBox x:Name="txbBuscador_Tpv" DockPanel.Dock="Top" Text="{Binding BuscadorArticle, Mode=TwoWay}" TextAlignment="Center"  />-->
                         <ListView x:Name="lsbArticles_Tpv" Style="{StaticResource LlistaArticles}" ItemsSource="{Binding Articles}" >
                                 
                         </ListView>

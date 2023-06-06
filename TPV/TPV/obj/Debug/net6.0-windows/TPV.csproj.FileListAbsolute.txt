@@ -58,3 +58,5 @@ C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Emp
 C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\Views\wndPagaments.baml
 C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\Views\wndTicket.g.cs
 C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\Views\wndTicket.baml
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\Views\wndFactura.g.cs
+C:\Users\SMXIGarcia\Nextcloud\DAM 2.2\(M13) Projecte\Projecte Final\Projecte\Empersa\TPV\TPV\obj\Debug\net6.0-windows\Views\wndFactura.baml

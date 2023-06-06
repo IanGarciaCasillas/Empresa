@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Nodes;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -29,10 +30,15 @@ namespace TPV.ViewModel
         //PRIVADES
         ObservableCollection<object> articles;
         ObservableCollection<ItemCompraTpv> llistaCompra;
+        ObservableCollection<ComandaVendum> llistaComandes;
+        ObservableCollection<object> llistaComandaDetall;
         private string compraTotal;
         private double preuCompraTotal;
         private int idTicketCompra;
         private int numDocumentTicket;
+        private string titolComanda;
+        ComandaVendum comandaSelect;
+        
 
         //PUBLIQUES
         public ICommand AddArticleCompraCommand { get; set; }
@@ -44,12 +50,26 @@ namespace TPV.ViewModel
         public ICommand PagarCompraCommand { get; set; }
         public ICommand ConsultarTicketCommand { get; set; }
 
+        public ICommand PreparaComandaCommand { get; set; }
+        
+
+
         public ObservableCollection<object> Articles {get => articles; set => SetProperty(ref articles, value); }
         public ObservableCollection<ItemCompraTpv> LlistaCompra { get => llistaCompra; set => SetProperty(ref llistaCompra, value); }
         public string CompraTotal { get => compraTotal; set => SetProperty(ref compraTotal, value); }
         public double PreuCompraTotal { get => preuCompraTotal; set => SetProperty(ref preuCompraTotal, value); }
         public int IdTicketCompra { get => idTicketCompra; set => SetProperty(ref idTicketCompra, value); }
         public int NumDocumentTicket { get => numDocumentTicket; set => SetProperty(ref numDocumentTicket, value); }
+        public string TitolComanda { get => titolComanda;set=>SetProperty(ref titolComanda, value); }
+        public ComandaVendum ComandaSelect { get => comandaSelect;set=>SetProperty(ref comandaSelect, value); }
+
+        public ObservableCollection<ComandaVendum> LlistaComandes { get => llistaComandes; set => SetProperty(ref llistaComandes, value); }
+        public ObservableCollection<object> LlistaComandaDetall { get => llistaComandaDetall; set=>SetProperty(ref llistaComandaDetall,value); }
+
+
+
+
+
 
         #endregion
 
@@ -61,6 +81,8 @@ namespace TPV.ViewModel
             //TPV
             articles = new ObservableCollection<object>();
             llistaCompra= new ObservableCollection<ItemCompraTpv>();
+            llistaComandes = new ObservableCollection<ComandaVendum>();
+            llistaComandaDetall = new ObservableCollection<object>();
 
             AddArticleCompraCommand = new RelayCommand<int>(AddArticleCompra);
             SumaArticleCommand = new RelayCommand<int>(SumaArticleCompra);
@@ -69,16 +91,34 @@ namespace TPV.ViewModel
             CancelarCompraCommand = new RelayCommand(obj => CancelarCompra(), obj=>CanCancelarCompra());
             PagarCompraCommand = new RelayCommand(obj => PagarCompra(), obj=>CanPagarCompra());
             ConsultarTicketCommand = new RelayCommand(obj => ConsultarTicket());
+
+            PreparaComandaCommand = new RelayCommand(obj => PrepararComanda(), obj=>CanPreparaComanda());
+            
             PreuCompraTotal = 0;
             CompraTotal = $"TOTAL {PreuCompraTotal}€";
 
 
             //AFEGIR ARTICLES AL LISTVIEW TPV
             GetArticles();
+            GetComandes();
         }
 
 
+
         #region Funcions TPV
+
+        private bool CanPreparaComanda()
+        {
+            bool value;
+            if (ComandaSelect == null)
+                value = false;
+            else
+                value = true;
+
+            return value;
+        }
+
+
 
         private void ConsultarTicket()
         {
@@ -113,7 +153,7 @@ namespace TPV.ViewModel
             
             wndPagaments window = new wndPagaments(newTicket.IdTicket, newTicket.NumDocument);
             window.Show();
-
+            
             CancelarCompra();
 
 
@@ -140,6 +180,7 @@ namespace TPV.ViewModel
         {
             ItemCompraTpv item = LlistaCompra.First<ItemCompraTpv>(item => item.Idx == idx);
             item.CountArticle--;
+            item.Article.Stock += 1.0;
 
             if (item.countArticle == 0)
             {
@@ -152,16 +193,21 @@ namespace TPV.ViewModel
                 PreuCompraTotal -= item.PreuArticle;
                 UpdatePreuTotal();
             }
+            DAOManagerAPI.UpdateStock(item.Article);
 
         }
 
         private void SumaArticleCompra(int idx)
         {
             ItemCompraTpv item = LlistaCompra.First<ItemCompraTpv>(item=>item.Idx == idx);
-            item.CountArticle++;
-            PreuCompraTotal += item.PreuArticle;
-            UpdatePreuTotal();
-
+            item.Article.Stock -= 1.0;
+            if (item.Article.Stock > 0)
+            {
+                item.CountArticle++;
+                PreuCompraTotal += item.PreuArticle;
+                UpdatePreuTotal();
+                DAOManagerAPI.UpdateStock(item.Article);
+            }
         }
 
         public void AddArticleCompra(int idArticle)
@@ -193,9 +239,19 @@ namespace TPV.ViewModel
                 LlistaCompra.Add(item);
                 PreuCompraTotal += item.PreuArticle;
 
+                DAOManagerAPI.UpdateStock(articleSelect);
             }
-
             UpdatePreuTotal();
+        }
+
+        private void GetComandes()
+        {
+            var llistaComandes = DAOManagerAPI.GetComandesVenda();
+            LlistaComandes.Clear();
+            foreach(var comanda in llistaComandes)
+            {
+                LlistaComandes.Add(comanda);
+            }
         }
 
         
@@ -227,6 +283,38 @@ namespace TPV.ViewModel
         private void UpdatePreuTotal()
         {
             CompraTotal = $"TOTAL {PreuCompraTotal.ToString("0.##")}€";
+        }
+
+        public void ChangeComanda(int idxComanda)
+        {
+            if(idxComanda != -1)
+            {
+                ComandaVendum comandaSelect = LlistaComandes[idxComanda];
+
+                List<ComandaVendaDetall>comandaDetalls = DAOManagerAPI.GetDetalls(comandaSelect);
+                LlistaComandaDetall.Clear();
+
+                for (int idx = 0; idx < comandaDetalls.Count; idx++)
+                {
+                    var detall = comandaDetalls[idx];
+                    Article article = DAOManagerAPI.GetArticle(detall.IdArticle);
+                    LlistaComandaDetall.Add(new { UnitatsDemanades = detall.QuantitatDemanada, NomArticleDetall = article.NomArticle });
+                }
+                ComandaSelect = comandaSelect;
+                TitolComanda = $"COMANDA: {comandaSelect.IdComanda}";
+            }
+        }
+
+
+        private void PrepararComanda()
+        {
+            DAOManagerAPI.CrearAlbara(ComandaSelect);
+            DAOManagerAPI.EnviarNotific(ComandaSelect);
+            GetComandes();
+            ComandaSelect = null;
+            TitolComanda = "";
+            LlistaComandaDetall.Clear();
+
         }
 
         #endregion

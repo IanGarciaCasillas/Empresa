@@ -9,7 +9,7 @@ public partial class AlbaraVendum
 
     public DateTime Data { get; set; }
 
-    public virtual ICollection<AlbaraVendaDetall> AlbaraVendaDetalls { get; set; } = new List<AlbaraVendaDetall>();
+    public virtual ICollection<AlbaraVendaDetall>? AlbaraVendaDetalls { get; set; } = new List<AlbaraVendaDetall>();
 
-    public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
+    public virtual ICollection<Ticket>? Tickets { get; set; } = new List<Ticket>();
 }

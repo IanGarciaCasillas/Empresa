@@ -10,6 +10,9 @@
     <Compile Update="Views\WndConsultaTicket.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\wndFactura.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\wndLogin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\WndConsultaTicket.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\wndFactura.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\wndLogin.xaml">

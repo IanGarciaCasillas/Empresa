@@ -74,8 +74,37 @@
         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
     </Style>
 
+    <!-- STYLE COMANDA DETALL-->
+
+    <Style x:Key="LlistaComandaDetalls" TargetType="{x:Type ListView}">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <DockPanel>
+                        <TextBlock Text="{Binding UnitatsDemanades}" FontSize="20" Margin="5,0,20,0"/>
+                        <TextBlock Text="{Binding NomArticleDetall}" FontSize="20" Margin="20,0,0,0"/>
+                    </DockPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+    </Style>
+
+
+    <!-- STYLE COMANDA -->
     
-   
+    <Style x:Key="LlistaComanda" TargetType="{x:Type ListBox}">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding DataComanda}" FontSize="20" Margin="5,0,20,0"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+    </Style>
 
 
 </ResourceDictionary>
